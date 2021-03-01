@@ -21,97 +21,48 @@ print(f"""                      back:{i[1][1]}
                     bottom:{i[0][1]}
                     
 ****************Let's Play******************                                       """)
+print("\nR-roll right\nL-roll left\nU-roll up\nD-roll down\nQ-quit ")
 
 r.shuffle(i)
 print(i)
 
 
 def dice():
+        res = (f"""                      back:{i[1][1]}
+                +---------------------+
+               /                     /|
+              /        Top:{i[0][0]}        / |
+             /                     /  |
+            /                     /   |right:{i[2][1]}
+           +---------------------+    |
+           |                     |    |
+           |                     |    |
+    left:{i[2][0]} |                     |    |
+           |                     |    +
+           |      front:{i[1][0]}        |   /
+           |                     |  /
+           |                     | /
+           +---------------------+
+                    bottom:{i[0][1]}                             
+                                                                   """)
         """ dice() function returns the final position of dice. """
         while(True):
         
             if select=='r':
                 i[0][0],i[2][1],i[0][1],i[2][0]=i[2][0],i[0][0],i[2][1],i[0][1]
-        
-            return (f"""                      back:{i[1][1]}
-                +---------------------+
-               /                     /|
-              /        Top:{i[0][0]}        / |
-             /                     /  |
-            /                     /   |right:{i[2][1]}
-           +---------------------+    |
-           |                     |    |
-           |                     |    |
-    left:{i[2][0]} |                     |    |
-           |                     |    +
-           |      front:{i[1][0]}        |   /
-           |                     |  /
-           |                     | /
-           +---------------------+
-                    bottom:{i[0][1]}                             
-                                                                   """)
-    
-    
-    
+                return res
+          
             if select=='l':
                 i[2][0],i[0][0],i[2][1],i[0][1]=i[0][0],i[2][1],i[0][1],i[2][0]
-                return (f"""                      back:{i[1][1]}
-                +---------------------+
-               /                     /|
-              /        Top:{i[0][0]}        / |
-             /                     /  |
-            /                     /   |right:{i[2][1]}
-           +---------------------+    |
-           |                     |    |
-           |                     |    |
-    left:{i[2][0]} |                     |    |
-           |                     |    +
-           |      front:{i[1][0]}        |   /
-           |                     |  /
-           |                     | /
-           +---------------------+
-                    bottom:{i[0][1]}                             
-                                                                   """)
+                return res
 
             if select=='u':
                 i[0][0],i[1][1],i[1][0],i[0][1]=i[1][0],i[0][0],i[0][1],i[1][1]
-                return (f"""                      back:{i[1][1]}
-                +---------------------+
-               /                     /|
-              /        Top:{i[0][0]}        / |
-             /                     /  |
-            /                     /   |right:{i[2][1]}
-           +---------------------+    |
-           |                     |    |
-           |                     |    |
-    left:{i[2][0]} |                     |    |
-           |                     |    +
-           |      front:{i[1][0]}        |   /
-           |                     |  /
-           |                     | /
-           +---------------------+
-                    bottom:{i[0][1]}                             
-                                                                   """)
+                return res
 
             if select=='d':
                 i[1][0],i[0][0],i[0][1],i[1][1]=i[0][0],i[1][1],i[1][0],i[0][1]
-                return (f"""                      back:{i[1][1]}
-                +---------------------+
-               /                     /|
-              /        Top:{i[0][0]}        / |
-             /                     /  |
-            /                     /   |right:{i[2][1]}
-           +---------------------+    |
-           |                     |    |
-           |                     |    |
-    left:{i[2][0]} |                     |    |
-           |                     |    +
-           |      front:{i[1][0]}        |   /
-           |                     |  /
-           |                     | /
-           +---------------------+
-                    bottom:{i[0][1]}                             
-                                                                   """)
+                return res
 
         
     
@@ -140,8 +91,8 @@ def down():
 
 
 while True:
-  select = (input('pick your move\nR-roll right/L-roll left/U-roll up/D-roll down/Q-quit : ').lower()).strip()
-  if select == 'r':
+  select = ((input('pick your move: ').strip()[0]).lower())
+  if select == 'r' :
     print(right())
   elif select == 'l':
     print(left())
