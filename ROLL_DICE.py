@@ -1,4 +1,5 @@
 '''This is for rolling dice'''
+'''roll dice'''
 import random as r #Import random Module for Shuffling.
 i=[[6,1],[3,4],[5,2]]# i is initial Position of Dice.
 print('initial values: ',i)
