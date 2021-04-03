@@ -42,7 +42,7 @@ It contains 5 Funcions
 
 
 
-with regards,
+with warm regards,
 
 Team B
 
